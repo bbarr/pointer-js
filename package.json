@@ -1,0 +1,17 @@
+{
+  "name": "pointer",
+  "version": "0.0.0",
+  "description": "",
+  "main": "pointer.js",
+  "dependencies": {
+    "react": "^0.11.2"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}
