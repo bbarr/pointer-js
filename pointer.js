@@ -34,7 +34,7 @@ var util = {
 module.exports = function(data, cb) { 
 
   // all subs maintain closure link to "root"
-  function subCursor(path) {
+  function subPointer(path) {
 
     return {
 
@@ -50,7 +50,7 @@ module.exports = function(data, cb) {
         var newPath = path.concat(typeof ext == 'string' ? ext.split('.') : ext)
         var newPathString = newPath.join('.')
         var existing = root.subs[newPathString]
-        var sub = existing || (root.subs[newPathString] = subCursor(newPath))
+        var sub = existing || (root.subs[newPathString] = subPointer(newPath))
         !existing && sub._refresh()
         return sub
       },
@@ -79,8 +79,8 @@ module.exports = function(data, cb) {
     }
   }
 
-  // build root cursor, with extra magix
-  var root = subCursor([])
+  // build root pointer, with extra magix
+  var root = subPointer([])
   root._current = root.data = data
   root.subs = {}
   root.swap = function(newData) {
