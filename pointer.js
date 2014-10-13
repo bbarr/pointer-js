@@ -60,7 +60,7 @@ module.exports = function(data, cb) {
       },
 
       deref: function(orDefault) {
-        return this._current || orDefault
+        return typeof this._current !== 'undefined' ? this._current : orDefault
       },
 
       update: function(delta) {
@@ -93,3 +93,4 @@ module.exports = function(data, cb) {
   return root
 }
 module.exports.util = util
+

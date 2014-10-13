@@ -1,6 +1,6 @@
 {
-  "name": "pointer",
-  "version": "0.0.0",
+  "name": "react-pointer",
+  "version": "0.0.1",
   "description": "",
   "main": "pointer.js",
   "dependencies": {
